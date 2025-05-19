@@ -1,0 +1,7 @@
+{{#each comments}}
+    <div id="message-{{id}}" class="comment">
+        <strong class="comment-author">{{username}}</strong>
+        <span class="comment-date">{{created_at}}</span>
+        <div class="comment-text">{{text}}</div>
+    </div>
+{{/each}}

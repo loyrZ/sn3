@@ -1,0 +1,22 @@
+<nav id="nav-bar" class="nav-bar">
+    <ul>
+        <li id="side-bar-close" class="side-bar-close">
+            <a href="#">&#x2715;</a>
+        </li>
+        <li>
+            <a href="/" class="brand nav-items">
+                <span class="brand-text"><i class="fas fa-home" style="margin-right:0.2rem"></i>VA</span>/
+            </a>
+        </li>
+        <li>
+            <a class="nav-items" href="/post">Post</a>
+        </li>
+        <li>
+            {{#if this.isLogged}}
+                {{> userdropdown this}}
+            {{else}}
+                <a href="/login" id="authenticate-button" class="nav-items">Log in</a>
+            {{/if}}
+        </li>
+    </ul>
+</nav>

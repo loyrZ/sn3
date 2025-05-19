@@ -1,0 +1,14 @@
+<div class="search-section">
+    <div class="search-box">
+        <form action="/index" method="get" style="display:inline;">
+            <button name="homebutton" class="home-button">
+                <i class="fas fa-home"></i>
+            </button>
+        </form>
+        <form class="search-bar" action="/posts/search" method="get">
+            <input id="search-text" placeholder="Search..." class="search-text" name="searchTerm" type="text" value="{{searchTerm}}" />
+            <button name="searchbutton" class="search-button fas fa-search"></button>
+        </form>
+
+    </div>
+</div>

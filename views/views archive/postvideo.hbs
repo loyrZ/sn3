@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post video Page</title>
+</head>
+
+<body class="body">
+
+<div class="main">
+    <div class="main content">
+        <form action="/posts/create" method="POST" class="input-form2"
+              id="post-image" enctype="multipart/form-data">
+
+            <div class="form-container">
+                <div class="form-title">POST VIDEO</div>
+            </div>
+
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" id="title" name="title" placeholder="title"><br>
+
+            <label for="description" class="form-label">Description :</label>
+            <textarea id="description" name="description" placeholder="description" required></textarea><br>
+
+            <label for="textpost" class="form-label">Write Post :</label>
+            <textarea id="textpost" name="textpost" placeholder="textpost" required></textarea><br>
+
+            <label for="videoFile" class="form-label">Upload Video:</label>
+            <input type="file" id="videoFile" name="videoUpload"  accept="video/*"><br>
+
+
+            <div class="policy-container">
+                <input type="checkbox" class="the-box" id="UserPolicy" required>
+                <label for="UserPolicy" class="form-label-box">Check to accept policy for uploading videos</label><br>
+            </div>
+
+            <button type="submit" class="upload-button">upload</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

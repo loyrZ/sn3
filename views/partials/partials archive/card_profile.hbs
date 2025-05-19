@@ -1,0 +1,65 @@
+
+    <div id="post-{{user.fk_user_id}}" class="card_profile">
+        <h2>id: {{id}}</h2>
+        <h2>user id: {{userId}}</h2>
+        <h2>Display Name: {{display_name}}</h2>
+        <h2>Username: {{username}}</h2>
+        <h2>Email: {{email}}</h2>
+        <img src="/{{profilepicture}}" alt="{{username}}'s Profile Picture" id="profilePicture" style="cursor: pointer;">
+
+        <div id="popupContainer" class="popup-container">
+            <div class="profile-photo">
+                <form action="/profile/edit" method="POST" enctype="multipart/form-data" class="editprofile" id="edit-profile">
+                    <label for="profilePicUpload" class="profile-photo"> Upload Profile Photo</label>
+                    <input type="file" name="profilePicUpload" accept="image/*" required>
+                    <button type="submit" class="upload-button">Upload</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="edit-button-container">
+            <a href="/profile/{{id}}/edit" class="edit-button">Edit</a>
+        </div>
+
+    </div>
+
+
+<script>
+
+    document.getElementById('profilePicture').addEventListener('click', function() {
+        document.getElementById('popupContainer').style.display = 'flex';
+    });
+
+    // Close the pop-up when clicking outside the form
+    document.getElementById('popupContainer').addEventListener('click', function(event) {
+        if (event.target === this) {
+            this.style.display = 'none';
+        }
+    });
+
+</script>
+
+<style>
+    /* Pop-up Container Styling */
+    .popup-container {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* On top of other elements */
+    }
+
+    /* Pop-up Content Styling */
+    .profile-photo {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 400px;
+        width: 90%;
+    }
+</style>

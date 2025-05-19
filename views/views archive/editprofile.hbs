@@ -1,0 +1,18 @@
+<div class="form-container">
+    <form action="/profile/{{user.id}}/edit" method="POST" class="form-card">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{user.username}}" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{user.email}}" required>
+        </div>
+        <div>
+            <label for="display_name">Display Name:</label>
+            <input type="text" id="display_name" name="display_name" value="{{user.display_name}}" required>
+        </div>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</div>

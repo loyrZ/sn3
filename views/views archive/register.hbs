@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+</head>
+
+<body class="body">
+
+
+<div class="main">
+    <div class="main content">
+        <div id = "error"></div>
+        <div id="error-box" class="error-box" style="display: none;"></div>
+        <form name = "registrationForm" id="reg-form" class="input-form"
+              action="/users/register" method="POST"
+              enctype="application/x-www-form-urlencoded">
+
+            <div class="form-container">
+                <div class="form-title">REGISTRATION FORM</div>
+            </div>
+
+            <div class="input-group">
+                <label for="username"></label>
+                <input type="text" name="username" id="username" placeholder="Username" required><br>
+            </div>
+
+            <div class="input-group">
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Email" required><br>
+            </div>
+
+            <div class="input-group">
+                <label for="password"></label>
+                <input type="text" name="password" id="password" placeholder="Password" required><br>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm_password"></label>
+                <input type="text" name="confirmPassword" id="confirm_password" placeholder="Confirm Password" required><br>
+            </div>
+
+            <div class="age-container">
+                <input type="checkbox" id="accept-age" required>
+                <label for="accept-age" class="age-button">I am 13 years of age or older</label>
+            </div>
+
+            <div class="tos-container">
+                <input type="checkbox" id="accept-tos" required>
+                <label for="accept-tos" class="tos-button">TOS / PRIVACY RULES</label>
+            </div>
+                <button type="submit">REGISTER</button>
+
+            <div id="tos-popup" class="popup">
+                <div class="popup-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Terms of Service and Privacy Rules</h2>
+                    <p>   Rule 1. Santa is Real</p>
+                    <p>Rule 2. Santa is Real</p>
+                    <p>Rule 3. Santa is Real</p>
+                    <p>Rule 4. Santa is Real</p>
+                    <p>Rule 5. Santa is Real</p>
+                    <button id="accept-tos-btn">Santa is real</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.tos-button').addEventListener('click', function() {
+        document.getElementById('tos-popup').style.display = 'block';
+    });
+
+    document.querySelector('.close-button').addEventListener('click', function() {
+        document.getElementById('tos-popup').style.display = 'none';
+    });
+
+    document.getElementById('accept-tos-btn').addEventListener('click', function() {
+        document.getElementById('accept-tos').checked = true;
+        document.getElementById('tos-popup').style.display = 'none';
+    });
+
+
+    window.addEventListener('click', function(event) {
+        const popup = document.getElementById('tos-popup');
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+
+</script>
+</body>
+</html>

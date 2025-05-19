@@ -2,25 +2,15 @@ const createError = require("http-errors");
 const express = require("express");
 const favicon = require('serve-favicon');
 const path = require("path");
-const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const handlebars = require("express-handlebars");
-const session = require('express-session');
-/*const MySQLStore = require('express-mysql-session')(session);*/
-const flash = require("express-flash");
-const profileRoutes = require('./routes/routes archive/profile');
 
 
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/routes archive/users");
-const postsRouter = require("./routes/routes archive/posts");
-const commentsRouter = require("./routes/routes archive/comments");
 
 const app = express();
 
 
-/*const sessionStorage = new MySQLStore({/** default options},
-                                                   require('./conf/database')*/
 
 
 app.engine(
@@ -52,44 +42,18 @@ app.set("view engine", "hbs");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
-app.use(session({
-    key:"csid",
-    secret:"csc317-key",
-    //store: sessionStorage,
-    resave: false,
-    saveUninitialized: true,
-    cookie:{
-        //this should be true, but we dont have a SSL/TSL certificate
-        secure:false,
-        maxAge:1000*60*10, // 10 minute session\
-        httpOnly:true
-    }
-    }))
-app.use(flash());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser("csc317-key"));
 app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(function (req, res, next) {
-    if(req.session.user){
-        res.locals.isLogged = true;
-        res.locals.user = req.session.user;
-    }
-    console.log(req.session);
-    next();
-});
 
-app.use("/public", express.static(path.join(__dirname, "public")));
-app.use("/posts",postsRouter);
+
 app.use("/", indexRouter); // route middleware from ./routes/index.js
-app.use("/comments",commentsRouter);
-app.use("/users", usersRouter); // route middleware from ./routes/users.js
-app.use('/profile', profileRoutes);
+
 
 
 

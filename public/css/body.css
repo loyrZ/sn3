@@ -1,0 +1,38 @@
+/**
+This one controls how the entire webpage is positioned
+ */
+
+
+.body {
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background-image: url("https://www.onlygfx.com/wp-content/uploads/2021/04/white-triangle-pattern-seamless-background-2.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+
+
+html, body {
+    height: 100%;
+}
+

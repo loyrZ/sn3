@@ -1,0 +1,129 @@
+/**
+Controls all dropdowns
+ */
+.top-info-bar-light {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 15px 20px;
+    background: #2C292C;
+    font-size: 14px;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: white;
+    z-index: 50;
+    position: relative;
+}
+
+
+.dropdown {
+    position: relative;
+    background: #1f1d1f;
+}
+
+.dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.7em;
+}
+
+/* Dropdown Container */
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;               /* start at 50% from left */
+    transform: translateX(-50%);  /* shift back half of its own width */
+
+    /* rest of your styles */
+    visibility: hidden;
+    background: #1f1d1f;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    border: 2px solid transparent;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+
+    min-width: 240px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+/* Keep it visible when hovering parent or dropdown */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.dropdown-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content li {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+}
+
+.dropdown-content li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    color: #ffa87d;
+}
+
+.dropdown-content img {
+    width: 100%;
+    margin-bottom: 8px;
+
+    border: 1px solid #555;
+}
+
+.dropdown-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: white;
+}
+.info-box {
+    background: transparent;
+    padding: 8px 14px;
+    position: relative;
+    min-width: 220px;
+    text-align: center;
+    color: white;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+
+.info-box:hover .dropdown-content,
+.dropdown-content:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.info-section {
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    position: relative;
+    z-index: 100;
+}
+
+.info-section a {
+    color: white;
+    text-decoration: none;
+}

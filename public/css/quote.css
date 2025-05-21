@@ -1,0 +1,53 @@
+
+.quote-section {
+    text-align: center;
+    padding: 3rem 2rem;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: white; /* Makes text white */
+    text-transform: uppercase;
+
+
+    /* Soft gray-white background */
+    background-color: #2C292C;
+
+
+}
+
+
+
+.quote-text {
+
+
+    font-size: 1.6rem;
+    max-width: 700px;
+    margin: 0 auto;
+    transition: opacity 1s ease-in-out;
+    min-height: 3em;
+}
+
+.quote-section:hover, .quote-text:hover {
+    /* Green glow on hover */
+    text-shadow: 0 0 10px rgb(60, 52, 19), 0 0 20px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.quote-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.quote-dots .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 10%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quote-dots .dot.active {
+    background-color: #301907;
+    transform: scale(1.2);
+}

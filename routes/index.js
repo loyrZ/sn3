@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('utama', {
+  res.render('comingsoonpartial', {
     showMainHeader:true,
     showMainBody:true,
     showMainFooter:true
@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/utama', function(req, res, next) {
-  res.render('utama', {
+  res.render('comingsoonpartial', {
     showMainHeader:true,
     showMainBody:true,
     showMainFooter:true

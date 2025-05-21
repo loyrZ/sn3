@@ -1,0 +1,18 @@
+
+/* map */
+.map-container {
+    min-width: 300px;
+    min-height: 300px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}

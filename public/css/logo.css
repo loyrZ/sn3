@@ -1,0 +1,39 @@
+/* Footer Styles */
+
+.logo-wrapper-sg {
+    flex-shrink: 0;
+}
+.logo-wrapper-sg {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-wrapper-sg:hover {
+    transform: scale(1.04); /* Zoom in */
+    filter: brightness(1.3) drop-shadow(0 0 10px rgba(41, 34, 14, 0.5)); /* Glow */
+}
+
+/* logo for qc */
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+    gap: 20px; /* space between logos */
+    justify-content: flex-start; /* or center/space-between */
+    padding: 20px;
+}
+
+
+
+/* logo for home */
+.logo-sn{
+    height: 100px;             /* inner image size */
+    width: 100px;
+    border-radius: 50%;
+
+}
+
+.logo-fj{
+    height: 90px;             /* inner image size */
+    width: 100px;
+    border-radius: 50%;
+}

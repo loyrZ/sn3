@@ -1,0 +1,15 @@
+/**
+delete this and see it
+ */
+.snHeader {
+    background-color: #2C292C;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 120px;
+    box-sizing: border-box;
+    color: white;
+}

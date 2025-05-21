@@ -6,8 +6,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('comingsoonpartial', {
     showMainHeader:true,
-    showMainBody:true,
-    showMainFooter:true
+    showMainBody:false,
+    showMainFooter:false,
+    showcomingsoon:true
 
   });
 });
@@ -15,8 +16,9 @@ router.get('/', function(req, res, next) {
 router.get('/utama', function(req, res, next) {
   res.render('comingsoonpartial', {
     showMainHeader:true,
-    showMainBody:true,
-    showMainFooter:true
+    showMainBody:false,
+    showMainFooter:false,
+    showcomingsoon:true
 
   });
 });
